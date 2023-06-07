@@ -1,0 +1,132 @@
+:root {
+  --color-border: #dddddd;
+  --color-primary: #134880;
+  --color-secondary: #484a4c;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.content__wrapper {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  right: 100px;
+}
+
+.slider {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.slider__wrapper {
+  overflow: hidden;
+}
+
+.slider__row {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.slider__row_aligned-right {
+  align-self: flex-end;
+}
+
+.slider__image {
+  position: relative;
+  height: 200px;
+  width: auto;
+  border-radius: 5px;
+  transition: opacity 300ms ease-out;
+}
+
+.slider__image_disappearing {
+  opacity: 0;
+}
+
+.slider__images-container {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider__navigation {
+  width: 139px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+  align-items: flex-end;
+}
+
+.slider__button {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background-color: var(--color-white);
+}
+
+.slider__button:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+}
+
+.slider__button:hover .slider__icon {
+  display: none;
+}
+
+.slider__button:hover .slider__icon_hover {
+  display: block;
+}
+
+.slider__icon {
+  display: block;
+}
+
+.slider__icon_hover {
+  display: none;
+}
+
+.description {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description__title {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.2px;
+  color: var(--color-primary);
+  font-weight: bold;
+  width: 300.93px;
+  height: 120px;
+}
+
+.description__subtitle {
+  width: 300.93px;
+  height: 156px;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  color: var(--color-secondary);
+}

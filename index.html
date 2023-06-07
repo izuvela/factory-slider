@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ivan Žuvela">
+    <meta name="description" content="Example of a simple slider built with HTML, CSS and Jquery.">
+    <title>Factory zadatak</title>
+    <link rel="icon" type="image/x-icon" href="./assets/slider-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="content">
+        <div class="content__wrapper">
+            <div class="slider">
+                <div class="slider__wrapper">
+                    <div class="slider__row">
+                        <img class="slider__image" src="./assets/slider-image-7.jpg"
+                            alt="sea from a birds perspective" />
+                        <img class="slider__image" src="./assets/slider-image-6.jpg" alt="woman sitting on a car" />
+                        <img class="slider__image" src="./assets/slider-image-9.jpg" alt="penguins in the sea" />
+                        <img class="slider__image" src="./assets/slider-image-8.jpg"
+                            alt="inside a wave from a surfer perspective" />
+                        <img class="slider__image" src="./assets/slider-image-5.jpg"
+                            alt="man walking on the beach with a surfboard" />
+                    </div>
+                </div>
+                <div class="slider__row slider__row_aligned-right">
+                    <div class="slider__wrapper">
+                        <div class="slider__images-container">
+                            <img class="slider__image" src="./assets/slider-image-4.jpg" alt="cliffs" />
+                            <img class="slider__image" src="./assets/slider-image-1.jpg"
+                                alt="stones stacked on a beach" />
+                            <img class="slider__image" src="./assets/slider-image-2.jpg"
+                                alt="foggy weather, shore, trees" />
+                            <img class="slider__image" src="./assets/slider-image-3.jpg"
+                                alt="person shadow kickboxing on a beach" />
+                        </div>
+                    </div>
+                    <div class="slider__navigation">
+                        <button class="slider__button">
+                            <img src="assets/arrow-gray-left.png" alt="left navigation arrow" class="slider__icon">
+                            <img src="assets/arrow-blue-left.png" alt="right navigation arrow"
+                                class="slider__icon slider__icon_hover">
+                        </button>
+                        <button class="slider__button">
+                            <img src="assets/arrow-gray-right.png" alt="left navigation arrow" class="slider__icon">
+                            <img src="assets/arrow-blue-right.png" alt="right navigation arrow"
+                                class="slider__icon slider__icon_hover">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <h1 class="description__title">
+                    Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                </h1>
+                <p class="description__subtitle">
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                    aliquip
+                    ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+                    molestie
+                    consequat.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
