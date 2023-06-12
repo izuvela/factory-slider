@@ -1,0 +1,77 @@
+@import "variables";
+@import "mixins";
+
+.slider {
+  @include flex-display($direction: column, $gap: 10px);
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__row {
+    @include flex-display($gap: 10px);
+    position: relative;
+
+    &_aligned-right {
+      align-self: flex-end;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 200px;
+    width: auto;
+    border-radius: 5px;
+    transition: opacity 300ms ease-out;
+
+    &_disappearing {
+      opacity: 0;
+    }
+  }
+
+  &__images-container {
+    @include flex-display($gap: 10px);
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__navigation {
+    width: 139px;
+    @include flex-display(
+      $direction: column,
+      $gap: 10px,
+      $align-items: flex-end
+    );
+    margin-left: 10px;
+  }
+
+  &__button {
+    width: 60px;
+    height: 60px;
+    @include flex-display($align-items: center, $justify-content: center);
+    border: 1px solid $color-border;
+    border-radius: 5px;
+    background-color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $color-primary;
+
+      .slider__icon {
+        display: none;
+      }
+
+      .slider__icon_hover {
+        display: block;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__icon_hover {
+    display: none;
+  }
+}

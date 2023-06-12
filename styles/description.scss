@@ -1,0 +1,26 @@
+@import 'mixins';
+@import 'variables';
+
+.description {
+  @include flex-display($direction: column, $gap: 20px);
+  background-color: $color-white;
+
+  &__title {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.2px;
+    color: $color-primary;
+    font-weight: bold;
+    width: 300.93px;
+    height: 120px;
+  }
+
+  &__subtitle {
+    width: 300.93px;
+    height: 156px;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.2px;
+    color: $color-secondary;
+  }
+}
