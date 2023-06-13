@@ -7,14 +7,51 @@
 
 .content {
   height: 100vh;
-  display: flex;
-  align-items: center;
 }
 .content__wrapper {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: fit-content;
+  height: 100%;
   gap: 20px;
   position: relative;
   right: 100px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 19px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100px;
+  width: 100%;
+}
+.header__first-box {
+  height: 100%;
+  width: 301px;
+  background-color: #DDDDDD;
+  border-radius: 0px 0px 5px 5px;
+}
+.header__second-box {
+  height: 100%;
+  width: 621px;
+  background-color: #DDDDDD;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .slider {
@@ -119,4 +156,18 @@
   line-height: 26px;
   letter-spacing: -0.2px;
   color: #484a4c;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 941px;
+}
+.footer__box {
+  background-color: #DDDDDD;
+  border-radius: 5px 5px 0px 0px;
+  height: 100%;
+  width: 100%;
 }

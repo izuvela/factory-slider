@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  @include flex-display($gap: 19px, $justify-content: flex-end);
+  position: absolute;
+  top: 0;
+	right: 0;
+  height: 100px;
+  width: 100%;
+
+  &__first-box {
+    height: 100%;
+    width: 301px;
+    background-color: $color-background;
+		border-radius: 0px 0px 5px 5px;
+  }
+
+  &__second-box {
+    height: 100%;
+    width: 621px;
+    background-color: $color-background;
+		border-radius: 0px 0px 5px 5px;
+  }
+}
