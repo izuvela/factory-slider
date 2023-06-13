@@ -5,6 +5,7 @@ $(document).ready(() => {
     .last()
     .find(".slider__images-container");
   const animationSpeed = 500;
+  let isAnimating = false;
 
   const moveSliderElement = ($sliderElement, direction) => {
     const $currentFirstImage = $sliderElement.find(".slider__image").first();
@@ -17,31 +18,36 @@ $(document).ready(() => {
 
     $imageToClone.addClass("slider__image_disappearing");
 
-    $imageToClone.stop().dequeue().on("transitionend", () => {
-      $sliderElement.stop().dequeue().animate({ left: animateDirection }, animationSpeed, () => {
-        const clonedImage = $imageToClone.clone();
-        isMovingLeft
-          ? $sliderElement.append(clonedImage)
-          : $sliderElement.prepend(clonedImage);
-        $sliderElement.css("left", 0);
+    const disappearingTransitionDuration = 300;
 
-        requestAnimationFrame(() => {
-          clonedImage.removeClass("slider__image_disappearing");
+    //čekanje na nestanak slike
+    setTimeout(() => {
+      $sliderElement
+        .stop()
+        .animate({ left: animateDirection }, animationSpeed, () => {
+          const clonedImage = $imageToClone.clone();
+          isMovingLeft
+            ? $sliderElement.append(clonedImage)
+            : $sliderElement.prepend(clonedImage);
+          $sliderElement.css("left", 0);
+
+          requestAnimationFrame(() => {
+            clonedImage.removeClass("slider__image_disappearing");
+          });
+
+          $imageToClone.remove();
+
+          //čekanje na prikaz slike
+          setTimeout(() => {
+            isAnimating = false;
+          }, disappearingTransitionDuration);
         });
-
-        $imageToClone.remove();
-        $sliderButtons.removeClass("disabled");
-      });
-    });
-  };
-
-  const areSliderButtonsEnabled = () => {
-    return !$sliderButtons.hasClass("disabled");
+    }, disappearingTransitionDuration);
   };
 
   $sliderButtons.on("click", function () {
-    if (areSliderButtonsEnabled()) {
-      $sliderButtons.addClass("disabled");
+    if (!isAnimating) {
+      isAnimating = true;
       const direction = $(this).index() === 0 ? "left" : "right";
       moveSliderElement($sliderRow.first(), direction);
       moveSliderElement($sliderImagesContainerSecond, direction);
