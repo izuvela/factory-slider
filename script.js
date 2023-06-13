@@ -17,8 +17,8 @@ $(document).ready(() => {
 
     $imageToClone.addClass("slider__image_disappearing");
 
-    $imageToClone.on("transitionend", () => {
-      $sliderElement.animate({ left: animateDirection }, animationSpeed, () => {
+    $imageToClone.stop().dequeue().on("transitionend", () => {
+      $sliderElement.stop().dequeue().animate({ left: animateDirection }, animationSpeed, () => {
         const clonedImage = $imageToClone.clone();
         isMovingLeft
           ? $sliderElement.append(clonedImage)
